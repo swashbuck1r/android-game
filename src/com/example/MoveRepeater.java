@@ -55,7 +55,7 @@ public class MoveRepeater implements OnTouchListener {
 		cancelMoveThread = true;
 	}
 
-	private void startRepeatThread() {
+	private synchronized void startRepeatThread() {
 
 		Thread r = new Thread() {
 
