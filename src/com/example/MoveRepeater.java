@@ -45,14 +45,13 @@ public class MoveRepeater implements OnTouchListener {
 		return false;
 	}
 
-	private void handleMoveDown() {
+	private synchronized void handleMoveDown() {
 		if (!moveThreadRunning) {
-			move();
 			startRepeatThread();
 		}
 	}
 
-	private void handleMoveUp() {
+	private synchronized void handleMoveUp() {
 		cancelMoveThread = true;
 	}
 
